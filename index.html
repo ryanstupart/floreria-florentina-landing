@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Floreria Florentina | New Website Launch</title>
+<meta name="description" content="A new Floreria Florentina website experience is launching May 24, 2026 at 10:00 AM." />
+<meta property="og:title" content="Floreria Florentina | New Website Launch" />
+<meta property="og:description" content="A new Floreria Florentina website experience is launching May 24, 2026 at 10:00 AM." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/bouquet-1.jpg" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="maintenance-hero">
+  <nav class="nav">
+    <div class="brand"><span class="brand-mark">✿</span><span>Floreria Florentina</span></div>
+  </nav>
+
+  <section class="maintenance-card">
+    <p class="eyebrow">New Website Launch / Nuevo sitio web</p>
+    <h1>A new Floreria Florentina experience is launching soon.</h1>
+    <h1 class="h1-spanish">Una nueva experiencia de Floreria Florentina llegará pronto.</h1>
+
+    <p class="lead">
+      We are completing the final transition to our new and improved website experience. Some features may still be in progress while we finish preparing everything for launch.
+    </p>
+
+    <p class="lead spanish">
+      Actualmente estamos completando la transición final a nuestro nuevo y mejorado sitio web. Es posible que algunas funciones aún estén en progreso mientras terminamos de preparar todo para el lanzamiento.
+    </p>
+
+    <div class="countdown-box">
+      <p class="countdown-label">Launching May 24, 2026 at 10:00 AM</p>
+      <p class="countdown-label spanish">Lanzamiento: 24 de mayo de 2026 a las 10:00 AM</p>
+      <div class="countdown-grid" id="countdown">
+        <div><span id="days">--</span><small>Days</small></div>
+        <div><span id="hours">--</span><small>Hours</small></div>
+        <div><span id="minutes">--</span><small>Minutes</small></div>
+        <div><span id="seconds">--</span><small>Seconds</small></div>
+      </div>
+    </div>
+
+    <div class="notice-box">
+      <p><strong>The shop catalog may be available for viewing, but the online ordering system may not be live during this transition.</strong></p>
+      <p><strong>El catálogo de la tienda puede estar disponible para ver, pero es posible que el sistema de pedidos en línea no esté activo durante esta transición.</strong></p>
+
+      <p class="phone-line">
+        For order support or assistance, please contact us directly at:<br />
+        <a href="tel:7708736614">(770) 873-6614</a>
+      </p>
+
+      <p class="phone-line spanish-phone">
+        Para soporte de pedidos o asistencia, por favor comuníquese directamente al:<br />
+        <a href="tel:7708736614">(770) 873-6614</a>
+      </p>
+
+      <p><strong>We apologize for the inconvenience and appreciate your patience as we prepare a better customer experience.</strong></p>
+      <p><strong>Pedimos disculpas por cualquier inconveniente y agradecemos su paciencia mientras preparamos una mejor experiencia para nuestros clientes.</strong></p>
+    </div>
+
+    <p class="return-note">New website launching soon / Nuevo sitio web próximamente</p>
+  </section>
+</header>
+
+<main>
+  <section class="gallery-section">
+    <div class="section-header center">
+      <p class="eyebrow">Floreria Florentina LLC</p>
+      <h2>Website improvements are in progress</h2>
+      <h2 class="section-spanish">Estamos trabajando en mejoras para el sitio web</h2>
+    </div>
+
+    <div class="gallery">
+      <img src="assets/bouquet-1.jpg" alt="Large red rose bouquet by Floreria Florentina" />
+      <img src="assets/bouquet-2.jpg" alt="Pink and red rose bouquet by Floreria Florentina" />
+      <img src="assets/bouquet-3.jpg" alt="Red rose bouquet by Floreria Florentina" />
+    </div>
+  </section>
+</main>
+
+<footer><p>Copyright 2026 By Floreria Florentina LLC</p></footer>
+
+<script>
+(function () {
+  const launchDate = new Date("2026-05-24T10:00:00-04:00").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = launchDate - now;
+    const countdown = document.getElementById("countdown");
+    if (!countdown) return;
+
+    if (distance <= 0) {
+      countdown.innerHTML = "<div class='launched-message'>The new website experience is launching now.</div>";
+      return;
+    }
+
+    document.getElementById("days").textContent = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").textContent = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById("minutes").textContent = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    document.getElementById("seconds").textContent = Math.floor((distance % (1000 * 60)) / 1000);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+})();
+</script>
+
+</body>
+</html>
